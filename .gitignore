@@ -1,0 +1,137 @@
+# =============================================================================
+# CryptoTrace AI — Root .gitignore
+# =============================================================================
+
+# ── Environment & Secrets (Never commit credentials) ────────────────────────
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cert
+credentials.json
+secrets.json
+**/credentials.json
+**/secrets.json
+secrets/
+private/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ── Python Virtual Environments ──────────────────────────────────────────────
+.venv/
+venv/
+ENV/
+env/
+.env/
+**/.venv/
+**/venv/
+
+# ── Python Type Checking & Testing ───────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytest_cache/
+**/.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# ── Node / Frontend ──────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+frontend/dist/
+frontend/dist-ssr/
+frontend/build/
+**/dist/
+**/dist-ssr/
+frontend/*.local
+frontend/.vite/
+**/.vite/
+
+# ── IDE & Editor ─────────────────────────────────────────────────────────────
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ── Operating System ─────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Logs & Temporary Files ───────────────────────────────────────────────────
+logs/
+**/logs/
+*.log
+*.log.*
+tmp/
+temp/
+
+# ── Database & Persistent Volumes ────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+postgres_data/
+
+# ── Forensic Evidence Uploads (Never commit raw observed evidence payloads) ───
+uploads/
+evidence/raw/
+evidence/samples/
+malware_samples/
+data/raw/
+
+# ── Alembic Cache ────────────────────────────────────────────────────────────
+backend/alembic/__pycache__/

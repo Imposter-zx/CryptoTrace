@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: cryptotrace-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cryptotrace_user
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_DB: cryptotrace_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cryptotrace_user -d cryptotrace_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
